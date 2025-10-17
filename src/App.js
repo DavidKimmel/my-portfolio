@@ -11,7 +11,7 @@ const Portfolio = () => {
       id: 1,
       title: "Fairfax Vulnerability Assessment",
       description: "Spatial analysis of climate vulnerability in Fairfax County",
-      thumbnail: "https://via.placeholder.com/400x300/1e3a5f/ffffff?text=Fairfax+Vulnerability",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/fairfax-thumb.jpg`,
       projectUrl: "fairfax.html",
       category: "Vulnerability Analysis"
     },
@@ -19,7 +19,7 @@ const Portfolio = () => {
       id: 2,
       title: "Satellite Mass Analysis",
       description: "Interactive visualization of satellite launch data and mass trends",
-      thumbnail: "https://via.placeholder.com/400x300/2c4a6b/ffffff?text=Satellite+Mass",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/satellite-thumb.jpg`,
       projectUrl: "sat.html",
       category: "Data Visualization"
     },
@@ -27,7 +27,7 @@ const Portfolio = () => {
       id: 3,
       title: "Haiti Landcover Change",
       description: "Temporal analysis of deforestation using remote sensing",
-      thumbnail: "https://via.placeholder.com/400x300/1e3a5f/ffffff?text=Landcover+Change",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/haiti-thumb.jpg`,
       projectUrl: "hati.html",
       category: "Remote Sensing"
     },
@@ -35,7 +35,7 @@ const Portfolio = () => {
       id: 4,
       title: "Chesapeake Bay Eutrophication",
       description: "Water quality analysis and nutrient loading assessment",
-      thumbnail: "https://via.placeholder.com/400x300/2c4a6b/ffffff?text=Chesapeake+Bay",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/bay-thumb.jpg`,
       projectUrl: "bay.html",
       category: "Environmental Analysis"
     },
@@ -43,18 +43,18 @@ const Portfolio = () => {
       id: 5,
       title: "WV Flying Squirrel Habitat",
       description: "Species habitat suitability modeling using MaxEnt",
-      thumbnail: "https://via.placeholder.com/400x300/1e3a5f/ffffff?text=Habitat+Model",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/squirrel-thumb.jpg`,
       projectUrl: null,
-      staticImage: "https://via.placeholder.com/1200x800/1e3a5f/ffffff?text=Full+Map",
+      staticImage: `${process.env.PUBLIC_URL}/assets/images/squirrel-full.jpg`,
       category: "Habitat Modeling"
     },
     {
       id: 6,
       title: "Carroll County Broadband",
       description: "Infrastructure gap analysis and service coverage mapping",
-      thumbnail: "https://via.placeholder.com/400x300/2c4a6b/ffffff?text=Broadband+Coverage",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/broadband-thumb.jpg`,
       projectUrl: null,
-      staticImage: "https://via.placeholder.com/1200x800/2c4a6b/ffffff?text=Full+Map",
+      staticImage: `${process.env.PUBLIC_URL}/assets/images/broadband-full.jpg`,
       category: "Infrastructure Analysis"
     }
   ];
@@ -113,11 +113,17 @@ const Portfolio = () => {
 
   const HomePage = () => (
     <div>
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20 mb-12">
+      <div 
+        className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20 mb-12 bg-cover bg-center bg-blend-overlay"
+        style={{
+          backgroundImage: `url(${process.env.PUBLIC_URL}/assets/images/gis.png)`,
+          backgroundColor: 'rgba(15, 23, 42, 0.5)'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">David A. Kimmel</h1>
+          <h1 className="text-5xl font-bold mb-4">David A. Kimmel | Image Scientist</h1>
           <p className="text-xl text-slate-300">Cartography & GIS Development</p>
-          <p className="text-lg text-slate-400 mt-2">Leveraging Geospatial Analysis and Remote Sensing for Strategic Intelligence Solutions</p>
+          <p className="text-lg text-slate-400 mt-2">Leveraging GIS, Remote Sensing, and Statistical Analysis for Insightful Spatial Solutions</p>
         </div>
       </div>
 
@@ -162,30 +168,39 @@ const Portfolio = () => {
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/3">
               <img
-                src="https://via.placeholder.com/300x300/1e3a5f/ffffff?text=Your+Photo"
+                src={`${process.env.PUBLIC_URL}/assets/images/profile.jpg`}
                 alt="David Kimmel"
                 className="w-full rounded-lg shadow-md"
               />
             </div>
             <div className="md:w-2/3">
               <h2 className="text-2xl font-bold text-slate-800 mb-4">David A. Kimmel</h2>
+              <p className="text-slate-600 mb-1">GIS Developer & Cartographer</p>
+              <p className="text-slate-600 mb-4">Active TS/SCI with CI Polygraph</p>
+              
               <p className="text-slate-700 mb-4">
-                I'm a geospatial professional completing my Master's in Cartography and GIS Development, 
-                with a passion for transforming complex spatial data into actionable intelligence.
+                I'm a full-stack geospatial professional with a Master of Science in GIS Development and 
+                Cartography from the University of Wisconsin and over 5 years of experience developing 
+                spatial tools, automating remote sensing workflows, and designing interactive maps for 
+                national defense and intelligence operations.
               </p>
               <p className="text-slate-700 mb-4">
-                My expertise spans advanced cartographic design, remote sensing analysis, and geospatial 
-                application development. I specialize in creating interactive web maps and spatial analysis 
-                tools that support decision-making in defense, environmental monitoring, and infrastructure planning.
+                Currently serving as a GIS Developer and Image Scientist at Boeing, I specialize in processing 
+                and analyzing Synthetic Aperture Radar (SAR) data, building automated geospatial pipelines, 
+                and developing data-driven insights for government clients. My background spans cartographic 
+                production at Leidos and geospatial intelligence analysis at the National Geospatial-Intelligence 
+                Agency (NGA).
               </p>
               <p className="text-slate-700 mb-4">
-                With experience in Python, JavaScript, ArcGIS, QGIS, and modern web mapping libraries, 
-                I bridge the gap between technical GIS analysis and user-friendly visualization.
+                I bridge the gap between technical geospatial analysis and user-friendly visualization, with 
+                expertise in Python, JavaScript, and open-source geospatial libraries. My work focuses on 
+                transforming complex spatial data into actionable intelligence products that support strategic 
+                defense planning and operational decision-making.
               </p>
               <div className="mt-6">
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">Core Competencies</h3>
+                <h3 className="text-lg font-semibold text-slate-800 mb-2">Technical Expertise</h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Cartography', 'Remote Sensing', 'Spatial Analysis', 'Web Mapping', 'Python', 'JavaScript', 'ArcGIS', 'QGIS'].map(skill => (
+                  {['Python', 'JavaScript', 'React', 'SAR Analysis', 'ArcGIS Pro', 'QGIS', 'Google Earth Engine', 'PostGIS', 'GDAL/OGR', 'Remote Sensing', 'Cartography', 'Web Mapping'].map(skill => (
                     <span key={skill} className="bg-slate-200 text-slate-700 px-3 py-1 rounded text-sm">
                       {skill}
                     </span>
@@ -211,64 +226,149 @@ const Portfolio = () => {
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-slate-800 mb-2">David A. Kimmel</h2>
-            <p className="text-slate-600">M.S. Cartography & GIS Development (Expected 2025)</p>
+            <p className="text-slate-600 mb-1">GIS Developer & Cartographer</p>
+            <p className="text-slate-600 mb-1">Active TS/SCI with CI Polygraph</p>
+            <p className="text-slate-600">Fairfax, VA | (443) 536-6606 | Kimmel.David@gmail.com</p>
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">Education</h3>
-            <div className="mb-4">
-              <h4 className="font-semibold text-slate-800">Master of Science - Cartography & GIS Development</h4>
-              <p className="text-slate-600">University Name | Expected 2025</p>
-            </div>
-            <div>
-              <h4 className="font-semibold text-slate-800">Bachelor of Science - Geography</h4>
-              <p className="text-slate-600">University Name | Year</p>
-            </div>
+            <p className="text-slate-700">
+              Full-stack geospatial professional with a master's in GIS & Cartography and 5+ years of 
+              experience developing spatial tools, automating remote sensing workflows, and designing 
+              interactive maps. Skilled in Python, JavaScript, and open-source geospatial libraries. 
+              Background in imagery science and cartographic production for national defense.
+            </p>
           </div>
 
           <div className="mb-8">
             <h3 className="text-xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">Technical Skills</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <h4 className="font-semibold text-slate-800 mb-2">GIS Software</h4>
-                <ul className="text-slate-600 space-y-1">
-                  <li>• ArcGIS Pro / Desktop</li>
-                  <li>• QGIS</li>
+                <h4 className="font-semibold text-slate-800 mb-2">GEOINT Tools</h4>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Socet GXP</li>
+                  <li>• ArcPro/ESRI suite</li>
+                  <li>• RemoteView</li>
+                  <li>• ENVI</li>
+                  <li>• QT Modeler</li>
                   <li>• Google Earth Engine</li>
-                  <li>• ENVI / ERDAS Imagine</li>
+                  <li>• GDAL/OGR</li>
+                  <li>• QGIS</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-800 mb-2">Developer Tools</h4>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• AWS</li>
+                  <li>• Visual Studio Code</li>
+                  <li>• Android Studio</li>
+                  <li>• Jupyter Notebook</li>
+                  <li>• PostGIS</li>
+                  <li>• IntelliJ IDEA</li>
+                  <li>• MATLAB</li>
+                  <li>• GitHub</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-slate-800 mb-2">Programming</h4>
-                <ul className="text-slate-600 space-y-1">
-                  <li>• Python (ArcPy, GeoPandas)</li>
-                  <li>• JavaScript (Leaflet, Mapbox)</li>
-                  <li>• R (Spatial Analysis)</li>
-                  <li>• SQL / PostGIS</li>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Python</li>
+                  <li>• JavaScript</li>
+                  <li>• C++</li>
+                  <li>• Java/Vue/React</li>
+                  <li>• Kotlin</li>
+                  <li>• SQL</li>
+                  <li>• MATLAB</li>
+                  <li>• HTML/CSS</li>
                 </ul>
               </div>
             </div>
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">Experience</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">Professional Experience</h3>
             <div className="space-y-6">
+              
               <div>
-                <h4 className="font-semibold text-slate-800">GIS Analyst / Position Title</h4>
-                <p className="text-slate-600 mb-2">Company Name | Dates</p>
-                <ul className="text-slate-600 space-y-1">
-                  <li>• Developed interactive web mapping applications for data visualization</li>
-                  <li>• Conducted spatial analysis for infrastructure planning projects</li>
-                  <li>• Created cartographic products for stakeholder presentations</li>
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h4 className="font-semibold text-slate-800">GIS Developer / Image Scientist</h4>
+                    <p className="text-slate-600">Boeing, Springfield VA</p>
+                  </div>
+                  <p className="text-slate-600 text-sm">Sept 2023 - Present</p>
+                </div>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Develop and implement geospatial workflows to process large volumes of remote sensing and Synthetic Aperture Radar (SAR) data</li>
+                  <li>• Apply geospatial and image processing algorithms to extract actionable features for integration into GIS platforms</li>
+                  <li>• Build automated data pipelines for sensor quality assessment using Python and specialized geospatial libraries</li>
+                  <li>• Conduct advanced geospatial analysis on radar cross sections, impulse response, and signal-to-noise ratio metrics</li>
+                  <li>• Research and recommend improvements to geospatial data collection, storage, and exploitation methods</li>
                 </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Cartographer</h4>
+                    <p className="text-slate-600">Leidos, Springfield VA</p>
+                  </div>
+                  <p className="text-slate-600 text-sm">Sept 2022 - Sept 2023</p>
+                </div>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Developed high-accuracy maritime charts ensuring compliance with national and international standards</li>
+                  <li>• Conducted data collection and analysis using GIS software, satellite imagery, and hydrographic survey data</li>
+                  <li>• Collaborated with multidisciplinary teams to create detailed maps integrating environmental data and operational zones</li>
+                  <li>• Utilized advanced cartographic techniques to visualize complex maritime data for strategic defense planning</li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h4 className="font-semibold text-slate-800">Geospatial Analyst</h4>
+                    <p className="text-slate-600">National Geospatial-Intelligence Agency (NGA), Springfield VA</p>
+                  </div>
+                  <p className="text-slate-600 text-sm">May 2022 - Sept 2022</p>
+                </div>
+                <ul className="text-slate-600 text-sm space-y-1">
+                  <li>• Analyzed and interpreted geospatial data from satellite imagery, aerial photography, and LiDAR</li>
+                  <li>• Conducted spatial analysis and modeling to identify patterns, trends, and anomalies for threat assessment</li>
+                  <li>• Created geospatial databases using SQL and Python, delivering data-driven insights for analysis</li>
+                  <li>• Improved data visualization by providing repeatable Python code examples for the intelligence community</li>
+                  <li>• Authored and published finished intelligence products to the greater Intelligence Community</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <h3 className="text-xl font-bold text-slate-800 mb-4 border-b-2 border-slate-300 pb-2">Education & Certifications</h3>
+            <div className="space-y-3">
+              <div>
+                <h4 className="font-semibold text-slate-800">Master of Science in GIS Development and Cartography</h4>
+                <p className="text-slate-600">University of Wisconsin</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-800">Bachelor of Science in Geography & Geospatial Science</h4>
+                <p className="text-slate-600">Oregon State University</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-800">Associates of Science in Geographic Information Systems</h4>
+                <p className="text-slate-600">Northern Virginia Community College</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-800">GEOINT Professional Certification: GPC-F</h4>
+                <p className="text-slate-600">United States Department of Defense</p>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-8">
             <a
-              href="#"
+              href="/assets/David_Kimmel_Resume_2025.pdf"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors"
+              download
             >
               Download PDF Resume
             </a>
