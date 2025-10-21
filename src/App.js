@@ -9,11 +9,11 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Fairfax Vulnerability Assessment",
-      description: "Spatial analysis of climate vulnerability in Fairfax County",
-      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/fairfax-thumb.jpg`,
-      projectUrl: "fairfax.html",
-      category: "Vulnerability Analysis"
+      title: "Nitrate ↔ Cancer Explorer (Static Demo)",
+      description: "Interactive geospatial analysis exploring relationships between nitrate levels in groundwater and cancer incidence rates",
+      thumbnail: `${process.env.PUBLIC_URL}/assets/thumbnails/cancer-thumb.png`,
+      projectUrl: "https://davidkimmel.github.io/GEOG777_Proj1/",
+      category: "Environmental Health Analysis"
     },
     {
       id: 2,
